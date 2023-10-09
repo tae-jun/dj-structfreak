@@ -4,7 +4,7 @@
   import { getPlaybackTime, seekTo, cue } from "./AudioContext.svelte"
   import { COLOR } from "./config"
   import { slide } from "svelte/transition"
-  import { cubicInOut, elasticInOut, expoInOut } from "svelte/easing"
+  import { expoInOut } from "svelte/easing"
 
   export let track: Track
   export let trackIndex: number
