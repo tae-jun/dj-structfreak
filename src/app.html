@@ -5,11 +5,13 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DL148K3J2J"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    if (window.location.hostname.search('taejun.kim') !== -1) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-    gtag('config', 'G-DL148K3J2J');
+      gtag('config', 'G-DL148K3J2J');
+    }
   </script>
 
   <meta charset="utf-8" />
