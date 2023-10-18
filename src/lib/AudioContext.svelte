@@ -35,6 +35,7 @@
         pausePlaying()
       } else {
         startPlaying()
+        recue()
       }
     })
 
@@ -118,7 +119,7 @@
   }
 
   function pausePlaying() {
-    destroySource(trackSource)
+    destroyAllSources()
 
     offsetTime += audioCtx.currentTime - startTime // Add elapsed time to offset
     paused.set(true)
