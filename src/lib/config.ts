@@ -6,4 +6,4 @@ export const COLOR = {
   NAV_HIGH: 'white',
 }
 
-export const S3_BASE = 'https://taejun-structfreak.s3.ap-northeast-2.amazonaws.com'
+export const S3_BASE = 'https://dujjp3bhaa8cg.cloudfront.net'

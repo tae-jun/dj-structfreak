@@ -7,17 +7,13 @@
   import { tracks, mode, paused } from "$lib/stores.js"
   import { slide } from "svelte/transition"
   import { S3_BASE } from "$lib/config"
-
-  // const trackId = "002.+Post+Malone+-+Sunflower.mp3"
-  // const trackId = "003.+The+Kid+LAROI+-+STAY.mp3"
-  // const trackId = "008.+Khalid+-+Talk.mp3"
-  // const trackId = "01.+The+Weeknd+-+Blinding+Lights.mp3"
-  const trackId = "009.+Travis+Scott+-+SICKO+MODE.mp3"
-  // const trackId = "60.+Amine%CC%81+-+Caroline.mp3"
-  // const trackId = "052.+Joji+-+Glimpse+of+Us.mp3"
+  import catalog from "$lib/catalog"
 
   onMount(async () => {
-    await loadTrack(trackId)
+    const randomIndex = Math.floor(Math.random() * catalog.length)
+    const randomTrackId = catalog[randomIndex]
+
+    await loadTrack(randomTrackId)
   })
 </script>
 

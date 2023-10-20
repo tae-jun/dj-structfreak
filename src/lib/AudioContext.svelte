@@ -50,11 +50,11 @@
   }
 
   export async function loadTrack(trackId: string) {
-    const url = `${S3_BASE}/info/` + trackId.replace(/\.mp3$/g, ".json.gz")
+    const url = `${S3_BASE}/info/${trackId}.json.gz`
     const res = await fetch(url)
     const newTrack: Track = await res.json()
 
-    const trackUrl = `${S3_BASE}/track/${trackId}`
+    const trackUrl = `${S3_BASE}/track/${trackId}.mp3`
     const newTrackAudioBuffer = await loadAudioBuffer(trackUrl)
     newTrack.duration = newTrackAudioBuffer.duration
 
@@ -172,7 +172,7 @@
       // Load simultaneously
       const [_tranAudioBuffer, _] = await Promise.all([
         loadAudioBuffer(tranAudioUrl),
-        loadTrack(tran.next_track_id),
+        loadTrack(tran.next_track_id.replace(/\.mp3$/, "")),
       ])
       tranAudioBuffer = _tranAudioBuffer
 
